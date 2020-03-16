@@ -12,3 +12,6 @@ var gcd = function(a, b) {
     }
 return gcd(b, a % b);
 };
+
+
+
