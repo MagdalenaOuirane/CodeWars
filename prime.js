@@ -1,3 +1,5 @@
+
+//6kyu - Is a number a prime?
 //Define a function that takes an integer argument and returns logical value true or false
 // depending on if the integer is a prime.
 
@@ -10,15 +12,22 @@
 
 
 
-function isPrime(num) {
-    if (num < 2) {
-    return false
-    } 
-    
-    for (let i = 2; i< num; i++){
-    if (num % i === 0) {
-    return false;
+
+function isPrime (num) {
+    if (num <= 1) {
+      return false
+    } else if (num <= 3) {
+      return true
+    } else if (num%2 === 0 || num%3 === 0) {
+      return false
     }
+   
+    let i = 5
+    while (i*i <= num) {
+      if (num%i === 0 || num%(i+2) === 0) {
+        return false
+      }
+      i += 6
     }
-    return true;
-    }
+    return true
+  }
